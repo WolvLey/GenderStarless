@@ -1,5 +1,5 @@
-let regx = /[\.]/g
-let i = 0
+
+let regx = /(?!\w_+)(_|\*)(innen|in|e)/gi
 function nodeInsertedCallback($event) {
 	let html = $(event.srcElement).has('article')
 
@@ -12,7 +12,8 @@ function nodeInsertedCallback($event) {
 				if (!el.is('span') || el.find('a').length > 0) return
 
 				el.text((i, old) => {
-					return old.replace(regx, '!!!')
+					console.log(old.match(regx))
+					return old.replace(regx, '')
 				})
 			})
 	}
