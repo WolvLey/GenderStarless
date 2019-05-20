@@ -1,22 +1,11 @@
+const regEx = /(?!\w_+)(_|\*)(innen|in|e)/gi
 
-let regx = /(?!\w_+)(_|\*)(innen|in|e)/gi
-function nodeInsertedCallback($event) {
-	let html = $(event.srcElement).has('article')
-
-	if (html.text().length !== 0) {
-		html
-			.find('div[lang]')
-			.children()
-			.each((i, element) => {
-				let el = $(element)
-				if (!el.is('span') || el.find('a').length > 0) return
-
-				el.text((i, old) => {
-					console.log(old.match(regx))
-					return old.replace(regx, '')
-				})
-			})
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+	if (request.message === 'clicked_browser_action') {
+		removeGenderStar()
 	}
-}
+})
 
-document.addEventListener('DOMNodeInserted', nodeInsertedCallback)
+function removeGenderStar() {
+    console.log($('p'))
+}
