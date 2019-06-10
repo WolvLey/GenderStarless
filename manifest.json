@@ -4,9 +4,11 @@
 	"description": "Description",
 	"options_page": "options.html",
 	"browser_action": {
-		"16": "assets/icon16.png",
-		"24": "assets/icon48.png",
-		"32": "assets/icon128.png"
+		"default_icon": {
+			"16": "assets/icon16.png",
+			"48": "assets/icon48.png",
+			"128": "assets/icon128.png"
+		}
 	},
 	"background": {
 		"scripts": ["background.js"]
@@ -22,6 +24,6 @@
 			"js": ["jquery-2.2.4.min.js", "content.js"]
 		}
 	],
-	"permissions": ["storage"],
+	"permissions": ["storage",  "tabs"],
 	"manifest_version": 2
 }
