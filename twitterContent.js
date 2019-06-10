@@ -12,8 +12,8 @@ function nodeInsertedCallback($event) {
 				if (!el.is('span') || el.find('a').length > 0) return
 
 				el.text((i, old) => {
-					console.log(old.match(regx))
-					return old.replace(regx, '')
+					old.match(regEx)
+					return old.replace(regEx, '')
 				})
 			})
 	}

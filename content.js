@@ -16,9 +16,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
 function removeGenderStar() {
 	$(`p:regex("${regEx}")`).each((i, el)=>{
-		$(el).text((i, old)=>{
+		let  target = $(el).text((i, old)=>{
 			return old.replace(regEx, '');
 		})
 
+		console.log(target)
 	});
 }

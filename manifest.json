@@ -2,10 +2,7 @@
 	"name": "Gender Star",
 	"version": "1.0",
 	"description": "Description",
-	"options_ui": {
-		"page": "options.html",
-		"open_in_tab": false
-	},
+	"options_page": "options.html",
 	"browser_action": {
 		"16": "assets/icon16.png",
 		"24": "assets/icon48.png",
@@ -21,6 +18,7 @@
 		},
 		{
 			"matches": ["<all_urls>"],
+			"exclude_matches": ["http://twitter.com/*", "https://twitter.com/*"],
 			"js": ["jquery-2.2.4.min.js", "content.js"]
 		}
 	],

@@ -69,10 +69,30 @@
 	</head>
 
 	<body>
-		<label class="switch">
-			<input type="checkbox" />
-			<span class="slider round"></span>
-		</label>
+		<table>
+			<tr>
+				<td>
+					Auto removal on Twitter
+				</td>
+				<td>
+					<label class="switch">
+						<input value="twitter" type="checkbox" />
+						<span class="slider round"></span>
+					</label>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Filter "_"
+				</td>
+				<td>
+					<label class="switch">
+						<input value="underscore" type="checkbox" />
+						<span class="slider round"></span>
+					</label>
+				</td>
+			</tr>
+		</table>
 
 		<div id="status"></div>
 		<button id="save">Save</button>
